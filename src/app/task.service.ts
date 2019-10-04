@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RequestService } from './request.service';
+import { Task } from './models/task.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,12 @@ export class TaskService {
 
   createTask(title: string, listId: string) {
     return this.requestService.post(`lists/${listId}/tasks`, { title });
+  }
+
+  complete(task: Task) {
+    return this.requestService.patch(`lists/${task._listId}/tasks/${task._id}`, {
+      completed: !task.completed
+    });
   }
 
 
