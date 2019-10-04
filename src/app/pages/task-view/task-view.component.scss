@@ -68,6 +68,7 @@
     }
 
     .task-list-container {
+      position: relative;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -100,9 +101,30 @@
           text-decoration: line-through;
           opacity: 0.8;
         }
+
+      }
+
+      .circle-add-button {
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        // background: $primary;
+        bottom: 1rem;
+        right: 1rem;
+        border-radius: 50%;
+        color: white;
+        font-size: 25px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
     }
+
+
+
   }
 }
 
