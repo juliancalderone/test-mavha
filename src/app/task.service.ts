@@ -20,5 +20,9 @@ export class TaskService {
     return this.requestService.get(`lists/${listId}/tasks`);
   }
 
+  createTask(title: string, listId: string) {
+    return this.requestService.post(`lists/${listId}/tasks`, { title });
+  }
+
 
 }
